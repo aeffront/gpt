@@ -14,7 +14,7 @@ var loading_animation = bodymovin.loadAnimation({
     path: './public/animations/intro.json', // Required
     renderer: 'svg', // Fixed: Use a valid renderer ('svg', 'canvas', or 'html')
     loop: false, // Optional
-    autoplay: true, // Optional
+    autoplay: false, // Optional
     name: "Hello World", // Name for future reference. Optional.
   })
 

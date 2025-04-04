@@ -1,3 +1,5 @@
+
+
 @font-face {
   font-family: "SF Mono Bold";
   src: url("../../../public/fonts/SF-Mono-Bold.otf") format("opentype");
@@ -89,6 +91,7 @@ body {
   width: 100vw;
   height: 100vh;
   background-color: rgb(123, 123, 123);
+  cursor : url("../../../public/cursor.svg"), auto;
 }
 
 #chat {
@@ -124,6 +127,7 @@ body {
   top: 3vh;
   left: 3vh;
   width: 50vw;
+  height: 15vh;
   overflow: none;
   overflow-wrap: break-word;
   white-space: pre-wrap;
@@ -139,6 +143,14 @@ body {
   background-color: rgba(188, 188, 188, 0);
   color: rgb(188, 188, 188);
   font-family: "SF Mono Heavy";
+  font-size: 3vh;
+  caret-color: rgb(74, 255, 149); /* Set the color of the text cursor */
+  
+  
+}
+
+#text-input:hover{
+  cursor: url("../../../public/text_cursor.svg"), auto;
 }
 ::selection {
   background-color: rgb(188, 188, 188);
@@ -261,7 +273,7 @@ canvas {
 .button:hover {
   font-family: "SF Mono Bold";
   font-weight: 1000;
-  cursor: pointer;
+  cursor: url("../../../public/cursor_pointer.svg"), auto;
 }
 
 

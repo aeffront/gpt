@@ -17,6 +17,7 @@
     overscroll-behavior: none;  
     background-color: rgb(188, 188, 188);
     border: 0.5px solid rgb(188, 188, 188);
+    cursor: url("../../../public/cursor.svg"), auto;
 
     
   }
@@ -71,6 +72,9 @@
     height: fit-content;
   
   }
+  .trackContainer_buttons:hover{
+    cursor: url("../../../public/cursor_pointer.svg"), auto;
+  }
 
   .paramContainer{
     display: flex;
@@ -121,7 +125,8 @@
   
   input[type="range"]::-webkit-slider-thumb:hover {
     background: rgb(202, 202, 202);
-    border: 1px solid rgb(98, 98, 98);;
+    border: 1px solid rgb(98, 98, 98);
+    cursor: url("../../../public/cursor_pointer.svg"), auto;
   }
   
   input[type="range"]::-moz-range-thumb {
@@ -155,7 +160,7 @@
   .audioButton:hover {
     color: rgb(98, 98, 98);;
     background-color: rgb(202, 202, 202);
-    cursor: pointer;
+    cursor: url("../../../public/cursor_pointer.svg"), auto;
   }
 
 

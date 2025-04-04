@@ -48,11 +48,12 @@
         loading_animation.addEventListener('DOMLoaded', () => {
           const botAnimation = document.getElementById('loading_animation');
           if (botAnimation) {
-            const pathElements = botAnimation.getElementsByTagName('path');
+            const pathElements = document.body.getElementsByTagName('path');
             if (pathElements.length > 0) {
               Array.from(pathElements).forEach((pathElement) => {
           pathElement.setAttribute('fill', 'rgb(188, 188, 188)');
           pathElement.setAttribute('stroke', 'rgb(188, 188, 188)');
+          
               });
             } else {
               console.warn('No <path> elements found in the bot animation.');
@@ -61,6 +62,7 @@
             console.warn('Bot animation element not found.');
           }
         });
+        document.addEventListener('click',()=>{intro_animation.play()});
       </script>
       <div id="intro_animation"></div>
       <script src="./src/js/lottie.js" type="module"></script>
@@ -79,11 +81,12 @@
         document.getElementById('tracks').style.display = 'flex';
 
 
+
         });
       </script>
      
     <script src="./src/js/main_v4.js" type="module"></script>
-    <script src="./src/js/text.js" type="module"></script>
+    
     
   </body>
 </html>

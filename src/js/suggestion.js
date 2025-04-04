@@ -1,5 +1,5 @@
 const suggestionBox  = document.getElementById("suggestions-box");
-import{sendPrompt,promptUpdate} from "./main_v4.js";
+import{sendPrompt,promptUpdate} from "./main.js";
 
 async function make_suggestion() {
     try {
