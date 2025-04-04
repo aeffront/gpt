@@ -1,0 +1,162 @@
+
+
+#tracks{
+  position: absolute;
+  top: 20vh;
+  margin: 2vw;
+    height: fit-content;
+    max-height: 75vh;
+    width: 96vw;
+  
+    display: none;
+    flex-direction: column;
+    align-items: left;
+
+    font-family: "SF Mono Regular";
+    overflow: scroll;
+    overscroll-behavior: none;  
+    background-color: rgb(188, 188, 188);
+    border: 0.5px solid rgb(188, 188, 188);
+
+    
+  }
+
+  .trackContainer{
+
+    height: 50%;
+    background-color: rgb(188, 188, 188);
+    display : flex;
+    flex-direction: row;
+   
+    
+  }
+
+  .trackContainer_info{
+    padding-top: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: top;
+    align-items: center;
+    background-color: blueviolet;
+    border: 0.3px solid rgb(125, 125, 125);
+
+    width: 10%;
+    gap: 10%;
+  }
+
+  .trackCanvas{
+    background-color: rgb(202, 202, 202);
+    width: 90%;
+    height: 100%;
+    border: 0.3px solid rgb(125, 125, 125);
+  }
+  .trackName{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 80%;
+    height: fit-content;
+    font-size: 70%;
+    font-weight: bold;
+    color: rgb(98, 98, 98);;
+  }
+
+  .trackContainer_buttons{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    width: 100%;
+    height: fit-content;
+  
+  }
+
+  .paramContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .trackLabel{
+    font-size: 1vw;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding-bottom: 1vw;
+  }
+
+
+
+  input[type="range"] {
+    background: #000000;
+    -webkit-appearance: none;
+    width: 80%;
+    height: 2px;
+    color: "black";
+    border-radius: 4px;
+    outline: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+  }
+  
+  input[type="range"]:hover {
+    opacity: 1;
+  }
+  
+  /* Style du "thumb" (le curseur) */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 1vw;
+    height: 1vw;
+    background: rgb(98, 98, 98);;
+
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  input[type="range"]::-webkit-slider-thumb:hover {
+    background: rgb(202, 202, 202);
+    border: 1px solid rgb(98, 98, 98);;
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: rgb(202, 202, 202);
+    border: 2px solid #ff0080;
+
+    cursor: pointer;
+
+  }
+
+
+  .audioButton{
+    background-color: rgb(98, 98, 98);;
+    width: fit-content;
+    height: fit-content;
+    padding: 2.5%;
+
+    display: block;
+    z-index: 2;
+    font-size: 1vw;
+    color: rgb(202, 202, 202); /* Changed to white without quotes */
+    border: 1px solid rgb(98, 98, 98);;
+    display: flex;
+    font-weight: normal;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .audioButton:hover {
+    color: rgb(98, 98, 98);;
+    background-color: rgb(202, 202, 202);
+    cursor: pointer;
+  }
+
+
+  

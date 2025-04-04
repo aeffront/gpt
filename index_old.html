@@ -1,0 +1,66 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+  </head>
+  <body>
+    <div id="chat"></div>
+    <div id="inputs">
+      <input type="text"
+      id="text-input"
+      placeholder="Type your message here..."></input>
+    <!-- <button id="rec-button">Start Recording</button>
+    <div id="transcription" style="display: none;"></div> <!-- Added for transcription -->
+    <script>
+      let isRecording = false;
+      let audioRecording = null;
+      let mediaRecorder;
+      let audioChunks = [];
+
+      document.getElementById("rec-button").addEventListener("click", async function () {
+        const recButton = document.getElementById("rec-button");
+        isRecording = !isRecording;
+
+        if (isRecording) {
+          recButton.innerText = "Recording...";
+          recButton.style.backgroundColor = "rgb(255, 179, 179)";
+
+          // Request microphone access and start recording
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          mediaRecorder = new MediaRecorder(stream);
+
+          audioChunks = []; // Clear audio chunks before starting a new recording
+
+          mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+              audioChunks.push(event.data); // Collect audio chunks
+            }
+          };
+
+          mediaRecorder.onstop = () => {
+            if (audioChunks.length > 0) {
+              const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
+              audioRecording = audioBlob;
+
+              const recordingStoppedEvent = new CustomEvent("recordingStopped", { detail: { audioRecording } });
+              window.dispatchEvent(recordingStoppedEvent);
+            } else {
+              console.error("No audio data was recorded.");
+            }
+          };
+
+          mediaRecorder.start();
+        } else {
+          recButton.innerText = "Start Recording";
+          recButton.style.backgroundColor = "rgb(202, 202, 202)";
+          mediaRecorder.stop(); // Stop recording
+        }
+      });
+    </script>
+    </div>
+     -->
+    <script src="./src/js/main_v1.js"></script>
+  </body>
+</html>

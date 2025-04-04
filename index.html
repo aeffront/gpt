@@ -1,0 +1,89 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/reset.css" />
+    <link rel="stylesheet" href="./src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/track.css" />
+    <script src="https://cdnjs.com/libraries/bodymovin" type="text/javascript"></script>
+  </head>
+  <body>
+    <div id="chat"></div>
+    <div id="tracks"></div>
+    <div id="inputs">
+      <div id="suggestions-box">
+
+      </div>
+      <textarea
+      id="text-input"
+      placeholder="What would you like to listen to ?"></textarea>
+      <div id="buttons">
+        <button id="play_button" class="button"> play</button>
+        <button id="save_button" class="button"> save</button>
+        <div id="dropdown">
+          <button id="dropdown-button" class="button">SONGS</button>
+          <div id="dropdown-content" >
+          </div>
+        </div>
+      </div>
+      
+      <canvas id="equalizer" ></canvas>
+      </canvas>
+
+      <script>
+        const dropdownButton = document.getElementById('dropdown-button');
+        const songs = Array.from(document.getElementsByClassName('saved-song'));
+
+        dropdownButton.addEventListener('click', () => {
+          songs.forEach((song) => {
+            song.classList.toggle('showContent');
+          });
+        });
+         
+      </script>
+    </div>
+      <div id="loading_animation"></div>
+      <script type="module">
+        import {loading_animation,intro_animation} from './src/js/lottie.js';
+        loading_animation.addEventListener('DOMLoaded', () => {
+          const botAnimation = document.getElementById('loading_animation');
+          if (botAnimation) {
+            const pathElements = botAnimation.getElementsByTagName('path');
+            if (pathElements.length > 0) {
+              Array.from(pathElements).forEach((pathElement) => {
+          pathElement.setAttribute('fill', 'rgb(188, 188, 188)');
+          pathElement.setAttribute('stroke', 'rgb(188, 188, 188)');
+              });
+            } else {
+              console.warn('No <path> elements found in the bot animation.');
+            }
+          } else {
+            console.warn('Bot animation element not found.');
+          }
+        });
+      </script>
+      <div id="intro_animation"></div>
+      <script src="./src/js/lottie.js" type="module"></script>
+      <script type="module">
+        import {intro_animation} from './src/js/lottie.js';
+        intro_animation.addEventListener('complete', () => {
+          const introAnimation = document.getElementById('intro_animation');
+          if (introAnimation) {
+            document.body.removeChild(introAnimation).then
+            
+
+          } else {
+            console.warn('Loading animation element not found.');
+          }
+        document.getElementById('inputs').style.display = 'flex';
+        document.getElementById('tracks').style.display = 'flex';
+
+
+        });
+      </script>
+     
+    <script src="./src/js/main_v4.js" type="module"></script>
+    <script src="./src/js/text.js" type="module"></script>
+    
+  </body>
+</html>

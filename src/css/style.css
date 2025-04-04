@@ -1,0 +1,355 @@
+@font-face {
+  font-family: "SF Mono Bold";
+  src: url("../../../public/fonts/SF-Mono-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Bold Italic";
+  src: url("../../../public/fonts/SF-Mono-BoldItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Heavy";
+  src: url("../../../public/fonts/SF-Mono-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Heavy Italic";
+  src: url("../../../public/fonts/SF-Mono-HeavyItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Light";
+  src: url("../../../public/fonts/SF-Mono-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Light Italic";
+  src: url("../../../public/fonts/SF-Mono-LightItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Medium";
+  src: url("../../../public/fonts/SF-Mono-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Medium Italic";
+  src: url("../../../public/fonts/SF-Mono-MediumItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Regular";
+  src: url("../../../public/fonts/SF-Mono-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Regular Italic";
+  src: url("../../../public/fonts/SF-Mono-RegularItalic.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Semibold";
+  src: url("../../../public/fonts/SF-Mono-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "SF Mono Semibold Italic";
+  src: url("../../../public/fonts/SF-Mono-SemiboldItalic.otf") format("opentype");
+}
+
+*{
+  overscroll-behavior-block: none;
+}
+
+/* Custom scrollbar styling for vertical scrollbars only */
+::-webkit-scrollbar {
+  width: 10px; /* Width of the vertical scrollbar */
+  height: 0; /* Hide horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(202, 202, 202); /* Background of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(89, 255, 139); /* Color of the scrollbar thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 255, 255); /* Color when hovering over the scrollbar thumb */
+}
+
+
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(123, 123, 123);
+}
+
+#chat {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
+  overflow-y: scroll;
+}
+#inputs{
+  display: none;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2vw;
+  height: 10%;
+}
+
+#rec-button{
+  background-color: rgb(202, 202, 202);
+  width: 20%;
+  padding: 2.5%;
+  border-radius: 12px;
+  border: 1px solid black;
+  height: 70%;
+}
+
+#rec-button:active {
+  background-color: rgb(255, 179, 179);
+}
+
+#text-input {
+  position: absolute;
+  top: 3vh;
+  left: 3vh;
+  width: 50vw;
+  overflow: none;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: break-word; /* Allow breaking long words */
+  text-align: left;
+  border: none; /* Remove border */
+  resize: none; /* Prevent manual resizing */
+  line-height: 0.7; /* Keep it readable */
+  display: block; /* Ensure it behaves as a block element */
+  box-sizing: border-box; /* Include padding and border in width/height */
+  font-weight: bold;
+  z-index: 10;
+  background-color: rgba(188, 188, 188, 0);
+  color: rgb(188, 188, 188);
+  font-family: "SF Mono Heavy";
+}
+::selection {
+  background-color: rgb(188, 188, 188);
+  color: rgb(123, 123, 123);
+}
+#text-input::placeholder {
+  color: rgb(188, 188, 188);
+  font-family: "SF Mono Heavy";
+  font-weight: normal;
+}
+
+
+#text-input:focus {
+  outline: none; /* Remove focus outline */
+}
+canvas {
+  width: 30vw;
+  height: 30vh;
+
+}
+
+.chat-line {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+}
+
+.prompt {
+  margin-left: auto;
+  height: fit-content;
+  padding: 2vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+.response {
+  margin-right: auto;
+  height: fit-content;
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+.promptText {
+  background-color: rgb(202, 202, 202);
+  width: fit-content;
+  padding: 1vw;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+.responseText {
+  background-color: rgb(202, 202, 202);
+  width: fit-content;
+  padding: 1vw;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+
+.prompt-canvas {
+  background-color: rgb(202, 202, 202);
+  width: 20vw;
+  height: 20vh;
+  border: 1px solid black;
+  background-color: white;
+  padding: 5vw;
+  border-radius: 12px;
+}
+
+.music-player {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: left;
+  background-color: rgb(202, 202, 202);
+  width: fit-content;
+  padding: 1vw;
+  gap: 2vw;
+  border-radius: 12px;
+  border: 1px solid black;
+}
+
+#buttons{
+  
+  top: 5vh;
+  right: 5vh;
+  width: fit-content;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 2vw;
+  align-items: right;
+  position: absolute;
+}
+
+.button{
+  background-color: rgba(255, 255, 255, 0);
+  color: rgb(188, 188, 188);
+  width: 10vw;
+  height: 5vh;
+  padding: 2.5%;
+  border-radius: 12px;
+  display: block;
+  z-index: 2;
+  font-size: 2vw;
+
+  border: none;
+  display: flex;
+  font-weight: normal;
+  align-items: center;
+  justify-content: center;
+
+  transition-duration: 0.3s;
+  font-weight: 100;
+  font-family: "SF Mono Regular";
+
+}
+
+.button:hover {
+  font-family: "SF Mono Bold";
+  font-weight: 1000;
+  cursor: pointer;
+}
+
+
+#play-button:active {
+  background-color: rgb(255, 179, 179);
+}
+
+
+#dropdown-content {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 12vh;
+  right: 5vh;
+  height: 0px;
+  z-index: 1;
+  gap: 3px;
+  background-color: rgb(202, 202, 202);
+
+}
+
+
+
+.saved-song{
+  font-size: 1vw;
+  color: rgb(123, 123, 123);
+  border-radius: 0;
+  
+  opacity: 0;
+  visibility: hidden;
+  
+}
+
+.showContent {
+  visibility: visible;
+  height: 200px;
+  opacity: 1;
+  height: 300px;
+  background-color: rgb(202, 202, 202);
+  border: 1px solid rgb(123, 123, 123);
+}
+
+
+
+
+
+
+#loading_animation{
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 30vw;
+  height: 30vh;
+  display: block;
+  z-index: 10000;
+  color: rgb(188, 188, 188);
+}
+
+
+
+#save_button{
+  width: 4vw;
+}
+
+#play_button{
+  width: 4vw;
+}
+#equalizer{
+  display: none;
+  width: 70vw;
+  height: 70vh;
+  z-index: 2;
+  position: fixed;
+  bottom: 5vh;
+  left: 5vh;
+}
+
+#intro_animation{
+  position: fixed;
+  top: 50vh;
+  left: 50vw;
+  transform: translate(-50%, -50%);
+  z-index: 20;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  z-index: 10000;
+  pointer-events: none;
+}
